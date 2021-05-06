@@ -8,6 +8,9 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Image speakerArt;
+    [SerializeField] GameObject choiceMenu;
+    [SerializeField] GameObject dialogueBox;
+    [SerializeField] Texture2D mouseSprite;
 
 
     private Queue<string> sentences;
@@ -16,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.SetCursor(mouseSprite, Vector2.zero, CursorMode.ForceSoftware);
         sentences = new Queue<string>();
         speakerPortraits = new Queue<Image>();
     }
@@ -99,6 +103,8 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of Conversation");
         //open the choice menu!!!
+        choiceMenu.SetActive(true);
+        dialogueBox.SetActive(false);
     }
 
 
