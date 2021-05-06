@@ -59,10 +59,27 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine((TypeSentence(sentence)));
+        //dialogueText.text = sentence;
 
 
     }
+
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+
+        }
+    }
+
+
+
 
     public void DisplaySpeakerPortraits()
     {
@@ -81,6 +98,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation");
+        //open the choice menu!!!
     }
 
 
