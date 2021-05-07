@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Damien
   sentences:
-  - Hi! I'm Damien!
-  - Welcome to Hell!
+  - 'Hi! I''m Damien! '
+  - Welcome to Hell! I mean... school. What do you like to do for fun?
   characterArt:
   - {fileID: 1531856452579526781, guid: 4efd89a389017aa4985650d69aa56e82, type: 3}
   - {fileID: 1531856452579526781, guid: 4efd89a389017aa4985650d69aa56e82, type: 3}

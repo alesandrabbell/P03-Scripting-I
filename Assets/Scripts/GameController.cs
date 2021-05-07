@@ -21,10 +21,13 @@ public class GameController : MonoBehaviour
     [SerializeField] Text _funText;
     [SerializeField] int _money = 8;
     [SerializeField] Text _moneyText;
+    [SerializeField] DialogueManager _dialogueManager;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+   
         UpdateStats();
 
         if(_backgroundMusic != null)
@@ -37,6 +40,20 @@ public class GameController : MonoBehaviour
     void Update()
     {
         UpdateStats();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Quitting Game...");
+            QuitGame();
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            _dialogueManager.DisplayNextSentence();
+        }
+
+
     }
 
 

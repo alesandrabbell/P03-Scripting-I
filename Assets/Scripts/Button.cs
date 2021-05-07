@@ -5,7 +5,7 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     [SerializeField] AudioClip _hoverSound;
-    [SerializeField] int _stat;
+   
     
 
     private void OnMouseEnter()

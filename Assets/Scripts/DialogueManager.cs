@@ -11,6 +11,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject choiceMenu;
     [SerializeField] GameObject dialogueBox;
     [SerializeField] Texture2D mouseSprite;
+    [SerializeField] AudioClip advanceTextAudio;
+    
+   
 
 
     private Queue<string> sentences;
@@ -19,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         Cursor.SetCursor(mouseSprite, Vector2.zero, CursorMode.ForceSoftware);
         sentences = new Queue<string>();
         speakerPortraits = new Queue<Image>();
@@ -63,6 +68,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
+        AudioHelper.PlayClip2D(advanceTextAudio, 100f);
         StopAllCoroutines();
         StartCoroutine((TypeSentence(sentence)));
         //dialogueText.text = sentence;

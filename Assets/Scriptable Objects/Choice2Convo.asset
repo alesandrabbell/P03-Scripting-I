@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Damien
   sentences:
-  - Metal!! You picked choice 2!!!!
+  - That's kind of icky.
   characterArt:
   - {fileID: 1531856452579526781, guid: 4efd89a389017aa4985650d69aa56e82, type: 3}
